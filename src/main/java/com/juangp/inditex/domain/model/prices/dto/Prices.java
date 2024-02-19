@@ -1,4 +1,4 @@
-package com.juangp.inditex.domain.model;
+package com.juangp.inditex.domain.model.prices.dto;
 
 import lombok.*;
 
@@ -13,11 +13,11 @@ import java.time.LocalDateTime;
 @Data
 public class Prices implements Serializable {
     Long idPrice;
+    Long productId;
     Long brandId;
+    Long priceList;
     LocalDateTime startDate;
     LocalDateTime endDate;
-    Long priceList;
-    Long productId;
     Long priority;
     BigDecimal price;
     String currency;

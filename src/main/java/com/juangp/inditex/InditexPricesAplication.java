@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class Aplication {
-    private static final Logger logger = LoggerFactory.getLogger(Aplication.class);
+public class InditexPricesAplication {
+    private static final Logger logger = LoggerFactory.getLogger(InditexPricesAplication.class);
     public static void main(String[] args) {
-        SpringApplication.run(Aplication.class, args);
+        SpringApplication.run(InditexPricesAplication.class, args);
         logger.info("\n------------------APPLICATION STARTED-----------------\n");
     }
 }
