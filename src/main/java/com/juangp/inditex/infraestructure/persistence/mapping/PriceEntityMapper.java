@@ -1,6 +1,6 @@
 package com.juangp.inditex.infraestructure.persistence.mapping;
 
-import com.juangp.inditex.domain.model.dto.Prices;
+import com.juangp.inditex.domain.model.prices.dto.Prices;
 import com.juangp.inditex.infraestructure.persistence.entity.PricesEntity;
 import org.springframework.stereotype.Service;
 

@@ -1,12 +1,12 @@
 package com.juangp.inditex.infraestructure.web.in.service;
 
-import com.juangp.inditex.application.service.PriceFinder;
+import com.juangp.inditex.application.service.prices.PriceFinder;
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
-import com.juangp.inditex.domain.model.dto.Prices;
-import com.juangp.inditex.domain.model.in.PricesRequest;
-import com.juangp.inditex.domain.model.mapping.PricesResponseMapper;
-import com.juangp.inditex.domain.model.out.PricesResponse;
+import com.juangp.inditex.domain.model.prices.dto.Prices;
+import com.juangp.inditex.domain.model.prices.in.PricesRequest;
+import com.juangp.inditex.domain.model.prices.mapping.PricesResponseMapper;
+import com.juangp.inditex.domain.model.prices.out.PricesResponse;
 import com.juangp.inditex.infraestructure.persistence.mapping.PriceEntityMapper;
 import com.juangp.inditex.infraestructure.persistence.repository.PricesRepository;
 import org.springframework.beans.factory.annotation.Autowired;

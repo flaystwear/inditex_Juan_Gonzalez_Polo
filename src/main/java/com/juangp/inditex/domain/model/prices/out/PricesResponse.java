@@ -1,7 +1,7 @@
-package com.juangp.inditex.domain.model.out;
+package com.juangp.inditex.domain.model.prices.out;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.juangp.inditex.domain.model.dto.FullPrice;
+import com.juangp.inditex.domain.model.prices.dto.FullPrice;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

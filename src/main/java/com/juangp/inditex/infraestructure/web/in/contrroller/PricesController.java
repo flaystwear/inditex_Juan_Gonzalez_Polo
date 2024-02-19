@@ -1,8 +1,8 @@
 package com.juangp.inditex.infraestructure.web.in.contrroller;
 
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
-import com.juangp.inditex.domain.model.in.PricesRequest;
-import com.juangp.inditex.domain.model.out.PricesResponse;
+import com.juangp.inditex.domain.model.prices.in.PricesRequest;
+import com.juangp.inditex.domain.model.prices.out.PricesResponse;
 import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 public class PricesController {
@@ -22,14 +23,11 @@ public class PricesController {
 
     @PostMapping("/prices")
     ResponseEntity<PricesResponse> findPrice(@RequestBody PricesRequest pricesRequest) throws PriceNotFoundException {
-        logger.info("Petición recibida a las "+ LocalDateTime.now()
-                +".\n Request: "
-                +pricesRequest.toString()
-        );
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String formattedDateTime = localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        logger.info(String.format("Petición recibida a las  %s. %s",formattedDateTime,pricesRequest.toString()));
         PricesResponse response= priceFinderImpl.findPricesInditex(pricesRequest);
-        logger.info("Petición respondida: "
-            +response
-        );
+        logger.info(String.format("Petición respondida: %s", response.toString()));
         return ResponseEntity.ok(response);
     }
 

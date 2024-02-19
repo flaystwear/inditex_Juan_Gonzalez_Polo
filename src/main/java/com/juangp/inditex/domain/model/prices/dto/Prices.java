@@ -1,4 +1,4 @@
-package com.juangp.inditex.domain.model.dto;
+package com.juangp.inditex.domain.model.prices.dto;
 
 import lombok.*;
 

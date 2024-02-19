@@ -1,8 +1,8 @@
-package com.juangp.inditex.domain.model.mapping;
+package com.juangp.inditex.domain.model.prices.mapping;
 
-import com.juangp.inditex.domain.model.dto.FullPrice;
-import com.juangp.inditex.domain.model.dto.Prices;
-import com.juangp.inditex.domain.model.out.PricesResponse;
+import com.juangp.inditex.domain.model.prices.dto.FullPrice;
+import com.juangp.inditex.domain.model.prices.dto.Prices;
+import com.juangp.inditex.domain.model.prices.out.PricesResponse;
 import org.springframework.stereotype.Service;
 
 @Service
