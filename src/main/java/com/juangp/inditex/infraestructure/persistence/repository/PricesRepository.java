@@ -18,6 +18,6 @@ public interface PricesRepository  extends JpaRepository<PricesEntity,Long> {
             "ORDER BY priority DESC " +
             "FETCH FIRST 1 ROW ONLY", nativeQuery = true
     )
-    Optional<PricesEntity> findByBrandIdAndProductIdAndDate(Long brandId, Long productId, LocalDateTime date);
+    PricesEntity findByBrandIdAndProductIdAndDate(Long brandId, Long productId, LocalDateTime date);
 
 }

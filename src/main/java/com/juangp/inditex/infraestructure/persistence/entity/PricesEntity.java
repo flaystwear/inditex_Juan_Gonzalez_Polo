@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name="PRICES")
+@NoArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor(force = true)
 @Data
 public class PricesEntity implements Serializable {
     @Id
