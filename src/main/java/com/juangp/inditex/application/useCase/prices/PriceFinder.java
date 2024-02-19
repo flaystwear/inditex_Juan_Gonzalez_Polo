@@ -1,4 +1,4 @@
-package com.juangp.inditex.application.service.prices;
+package com.juangp.inditex.application.useCase.prices;
 
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.TraductionDtoException;

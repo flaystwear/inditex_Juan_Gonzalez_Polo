@@ -1,6 +1,6 @@
 package com.juangp.inditex.infraestructure.web.in.service;
 
-import com.juangp.inditex.application.service.prices.PriceFinder;
+import com.juangp.inditex.application.useCase.prices.PriceFinder;
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
 import com.juangp.inditex.domain.model.prices.dto.Prices;
