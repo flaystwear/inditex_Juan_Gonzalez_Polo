@@ -3,7 +3,7 @@ package com.juangp.inditex.infraestructure.web.in.contrroller;
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.model.in.PricesRequest;
 import com.juangp.inditex.domain.model.out.PricesResponse;
-import com.juangp.inditex.infraestructure.web.in.service.PricesService;
+import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class PricesController {
     private static final Logger logger = LoggerFactory.getLogger(PricesController.class);
     @Autowired
-    PricesService pricesService;
+    PriceFinderImpl priceFinderImpl;
 
     @PostMapping("/prices")
     ResponseEntity<PricesResponse> findPrice(@RequestBody PricesRequest pricesRequest) throws PriceNotFoundException {
@@ -26,7 +26,7 @@ public class PricesController {
                 +".\n Request: "
                 +pricesRequest.toString()
         );
-        PricesResponse response=pricesService.findPricesInditex(pricesRequest);
+        PricesResponse response= priceFinderImpl.findPricesInditex(pricesRequest);
         logger.info("Petición respondida: "
             +response
         );

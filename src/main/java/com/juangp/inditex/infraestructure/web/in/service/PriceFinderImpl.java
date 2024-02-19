@@ -7,18 +7,15 @@ import com.juangp.inditex.domain.model.dto.Prices;
 import com.juangp.inditex.domain.model.in.PricesRequest;
 import com.juangp.inditex.domain.model.mapping.PricesResponseMapper;
 import com.juangp.inditex.domain.model.out.PricesResponse;
-import com.juangp.inditex.infraestructure.persistence.entity.PricesEntity;
 import com.juangp.inditex.infraestructure.persistence.mapping.PriceEntityMapper;
 import com.juangp.inditex.infraestructure.persistence.repository.PricesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.swing.text.html.Option;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Component
-public class PricesService implements PriceFinder {
+public class PriceFinderImpl implements PriceFinder {
     @Autowired
     PricesRepository pricesRepository;
 
