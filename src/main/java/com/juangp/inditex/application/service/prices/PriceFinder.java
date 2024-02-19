@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Repository
 public interface PriceFinder  {
-    PricesResponse findPricesInditex(PricesRequest pricesRequest) throws PriceNotFoundException;
-    PricesResponse findPricesInditex(LocalDateTime dateAsOn, Long idProduct, Long idList) throws PriceNotFoundException;
-    PricesResponse buildResponse(Prices prices) throws TraductionDtoException;
+    PricesResponse findPricesInditex(PricesRequest pricesRequest) ;
+    PricesResponse findPricesInditex(LocalDateTime dateAsOn, Long idProduct, Long idList);
+    PricesResponse buildResponse(Prices prices);
 }
