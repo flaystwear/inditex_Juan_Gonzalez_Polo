@@ -44,6 +44,19 @@ a Request body that will contain the data needed to fulfil the search. The
 other one, is type GET, and it will take the data from the URL as path variables
 except for the date, that will be taken as a parameter.
 
+##### NOTE:
+On the response, the original description didn't include the field "currency",
+but I considered it an important data, there's a huge difference between a price in
+EUR or in GBP, so I returned a field called "price", containing both the amount and the currency:
+```json
+{
+  "price": {
+    "currency": "EUR",
+    "amount": 38.95
+  }
+}
+```
+
 ### ENDPOINTS:
 ```http request
 POST /api/v2/prices
@@ -51,6 +64,9 @@ POST /api/v2/prices
 GET /api/v2/prices/inditex/brand/{brandId}/product/{productId}?date=YYYY-mm-ddThh:mm:ss
 ```
 ### POSTMAN COLLECTION TO TEST IT
+The collection is ready to import and test (local enviroment):
+[Dowload file: POSTMAN COLLECTION FOR TESTING](src/main/resources/documentation/juanGP_inditex.postman_collection.json)
+
 
 This collection includes the 5 test requested
 - Test 1: Request at 10:00 on the 14th for product 35455 for brand 1 (ZARA).
@@ -68,9 +84,28 @@ This collection includes the 5 test requested
     "date": "2020-06-14T10:00:00"
 }
 ```
+#### GET URL
+```http request
+GET /api/v2/prices/inditex/brand/1/product/35455?date=2020-06-15T14:00:00
+```
+
 - **brand**: Brand identifier.
 - **product**: Product identifier.
 - **date**: Date for when you want to know the price.
+#### RESPONSE BODY
+```json
+{
+  "productId": 35455,
+  "brandId": 1,
+  "priceList": 4,
+  "startDate": "2020-06-15T14:00:00",
+  "endDate": "2020-12-31T23:59:59",
+  "price": {
+    "currency": "EUR",
+    "price": 38.95
+  }
+}
+```
 
 ## Tests
 The testing of the application was done using both junit and mockito for integrated tests
@@ -106,9 +141,44 @@ like:
 - Versatile
 
 ### Diffblue Cover
-analyzes the codebase of a Java application and generates unit tests that 
+Analyzes the codebase of a Java application and generates unit tests that 
 verify the behavior of methods and classes. These generated tests aim 
 to achieve high code coverage and help developers identify potential 
 bugs and regressions in their code. 
 Although still in development, and unable to create fully working/complete tests,
 it proves to be an impactful tool for developing tests. 
+
+### GitHub
+For better control over code updates, versions, tags.
+
+### Sonar Lint
+This tool for Intellij (and Eclipse or VSC)is a valuable asset to keep in check
+the code, as it provides static analysis of the code, whilst is uses the same rules and configurations as SonarQube to grant 
+coherence between its real time analysis and the one in a SonarQube server.
+
+# Execution
+
+#### To run the application, use the following command inside the root directory of the project:
+
+```bash
+./mvnw spring-boot:run
+```
+
+The application will be available at http://localhost:8080
+The port is configurated on the application.yml, changeable from there:
+server.port = 8080
+
+#### Compile and test
+
+```bash
+./mvnw clean test
+```
+
+#### Building and Packaging
+To build and package the application, use:
+
+```bash
+./mvnw clean package
+```
+This will generate a JAR file in the target directory.
+

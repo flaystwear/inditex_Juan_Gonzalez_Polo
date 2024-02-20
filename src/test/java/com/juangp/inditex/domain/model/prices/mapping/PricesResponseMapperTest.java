@@ -37,6 +37,6 @@ class PricesResponseMapperTest {
         assertEquals(entity.getStartDate(), response.getStartDate());
         assertEquals(entity.getEndDate(), response.getEndDate());
         assertEquals(entity.getCurrency(), response.getPrice().getCurrency());
-        assertEquals(entity.getPrice(), response.getPrice().getPrice());
+        assertEquals(entity.getPrice(), response.getPrice().getAmount());
     }
 }

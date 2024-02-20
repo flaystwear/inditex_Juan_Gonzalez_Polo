@@ -11,5 +11,5 @@ import java.math.BigDecimal;
 @Data
 public class FullPrice {
     String currency;
-    BigDecimal price;
+    BigDecimal amount;
 }
