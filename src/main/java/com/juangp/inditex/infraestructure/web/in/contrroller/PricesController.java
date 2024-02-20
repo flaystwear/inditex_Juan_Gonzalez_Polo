@@ -22,7 +22,7 @@ public class PricesController {
     PriceFinderImpl priceFinderImpl;
     ValidateRequestDataImpl validateRequestData= new ValidateRequestDataImpl();
 
-    @PostMapping("/prices")
+    @PostMapping("/api/v2/prices")
     ResponseEntity<PricesResponse> findPrice(@RequestBody PricesRequest pricesRequest) {
         /*
         *Se coge el momento en el que se recibe la petición y lo convertimos en string
@@ -39,7 +39,7 @@ public class PricesController {
     }
 
     //Endpoint de tipo get con variables recogidas de la url y por parámetro en vez de con un body: solución alternativa
-    @GetMapping(value="/prices/inditex/brand/{brandId}/product/{productId}")
+    @GetMapping(value="/api/v2/prices/inditex/brand/{brandId}/product/{productId}")
     ResponseEntity<PricesResponse> findPriceAlternative(
             @PathVariable Long brandId,
             @PathVariable Long productId,
