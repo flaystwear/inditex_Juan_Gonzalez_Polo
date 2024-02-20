@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(force = true)
 @Data
 public class Prices implements Serializable {
-    Long idPrice;
     Long productId;
     Long brandId;
     Long priceList;

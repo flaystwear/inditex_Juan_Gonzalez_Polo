@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 public class PriceEntityMapper {
     public Prices mapPricesEntityToPrices(PricesEntity entity) {
         return new Prices(
-                entity.getIdPrice(),
                 entity.getProductId(),
                 entity.getBrandId(),
                 entity.getPriceList(),
