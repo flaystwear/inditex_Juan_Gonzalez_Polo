@@ -69,7 +69,7 @@ public class PriceFinderImpl implements PriceFinder {
     @Override
     public PricesResponse findPricesInditex(LocalDateTime dateAsOn, Long idProduct, Long idList) {
         //Implementación en caso de que los parámetros no vengan en un RequestBody
-        PricesEntity pricesEntity=new PricesEntity();
+        PricesEntity pricesEntity;
         try{
             /*Busqueda en base de datos de la informacion de prices solicitada
              * y conversión al object DTO Prices para tratamiento interno

@@ -20,8 +20,7 @@ public class PricesController {
     private static final Logger logger = LoggerFactory.getLogger(PricesController.class);
     @Autowired
     PriceFinderImpl priceFinderImpl;
-    @Autowired
-    ValidateRequestDataImpl validateRequestData;
+    ValidateRequestDataImpl validateRequestData= new ValidateRequestDataImpl();
 
     @PostMapping("/prices")
     ResponseEntity<PricesResponse> findPrice(@RequestBody PricesRequest pricesRequest) {
