@@ -5,14 +5,18 @@
 The following sample project consist in a Spring Boot application 
 that provides a REST service oriented to the finding of different prices
 based on the brand, product, and time period consulted. 
-It implements an Hexagonal Architecture, to focus on clear separation of 
+It implements a Hexagonal Architecture, to focus on clear separation of 
 concerns and independence of business logic from technical implementation 
 details, trying to use SOLID-like* approach.
 
-The diagram of the application is shown below.
+The diagram of the application is shown below. The 3 layers are 
+- Application: It defines what the app is going to do
+- Domain: Contains the classes that will be used, as well as their 
+relations and mappers. It contains custom exceptions as well
+- Infrastructure: the logic of the app, and it's enpoints, exception handler,
+and external elements needed, such as the H2 Database.
 
-
-![application-diagram.png](src/main/resources/documentation/application-diagram.png)
+![application-diagram.png](src/main/resources/documentation/)
 
 ## Database Description
 The application uses an in-memory H2 database, whose structure is as it follows:

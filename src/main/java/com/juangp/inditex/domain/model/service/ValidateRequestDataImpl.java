@@ -1,9 +1,9 @@
-package com.juangp.inditex.application.service.prices;
+package com.juangp.inditex.domain.model.service;
 
-import com.juangp.inditex.application.useCase.prices.ValidateRequestData;
+import com.juangp.inditex.application.useCase.ValidateRequestData;
 import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
-import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
+import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
