@@ -1,4 +1,4 @@
-package com.juangp.inditex.application.useCase.prices;
+package com.juangp.inditex.application.useCase;
 
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import org.springframework.stereotype.Repository;

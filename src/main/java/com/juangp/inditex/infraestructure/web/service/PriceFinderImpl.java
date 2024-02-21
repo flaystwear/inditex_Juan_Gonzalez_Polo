@@ -1,11 +1,11 @@
-package com.juangp.inditex.infraestructure.web.in.service;
+package com.juangp.inditex.infraestructure.web.service;
 
-import com.juangp.inditex.application.useCase.prices.PriceFinder;
+import com.juangp.inditex.application.useCase.PriceFinder;
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
 import com.juangp.inditex.domain.model.prices.dto.Prices;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
-import com.juangp.inditex.domain.model.prices.mapping.PricesResponseMapper;
+import com.juangp.inditex.domain.model.service.mapping.PricesResponseMapper;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
 import com.juangp.inditex.infraestructure.persistence.entity.PricesEntity;
 import com.juangp.inditex.infraestructure.persistence.mapping.PriceEntityMapper;
