@@ -1,4 +1,4 @@
-package com.juangp.inditex.domain.model.prices.mapping;
+package com.juangp.inditex.domain.model.service.mapping;
 
 import com.juangp.inditex.domain.model.prices.dto.FullPrice;
 import com.juangp.inditex.domain.model.prices.dto.Prices;
