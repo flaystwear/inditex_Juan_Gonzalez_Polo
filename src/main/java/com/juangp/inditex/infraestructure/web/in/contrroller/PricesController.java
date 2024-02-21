@@ -1,6 +1,6 @@
 package com.juangp.inditex.infraestructure.web.in.contrroller;
 
-import com.juangp.inditex.domain.model.service.ValidateRequestDataImpl;
+import com.juangp.inditex.infraestructure.web.service.ValidateRequestDataImpl;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
 import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
