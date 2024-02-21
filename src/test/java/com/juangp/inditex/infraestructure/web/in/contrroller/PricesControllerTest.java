@@ -1,6 +1,6 @@
 package com.juangp.inditex.infraestructure.web.in.contrroller;
 
-import com.juangp.inditex.application.useCase.prices.ValidateRequestData;
+import com.juangp.inditex.application.useCase.ValidateRequestData;
 import com.juangp.inditex.domain.model.prices.dto.FullPrice;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
-import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
+import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

@@ -1,9 +1,9 @@
 package com.juangp.inditex.infraestructure.web.in.contrroller;
 
-import com.juangp.inditex.application.service.prices.ValidateRequestDataImpl;
+import com.juangp.inditex.domain.model.service.ValidateRequestDataImpl;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
-import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
+import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class PricesController {
     PriceFinderImpl priceFinderImpl;
     ValidateRequestDataImpl validateRequestData= new ValidateRequestDataImpl();
 
-    @PostMapping("/prices")
+    @PostMapping("/api/v2/prices")
     ResponseEntity<PricesResponse> findPrice(@RequestBody PricesRequest pricesRequest) {
         /*
         *Se coge el momento en el que se recibe la petición y lo convertimos en string
@@ -30,16 +30,17 @@ public class PricesController {
         */
         LocalDateTime localDateTime1 = LocalDateTime.now();
         String formattedDateTime1 = localDateTime1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        logger.info(String.format("Petición recibida a  %s. %s",formattedDateTime1,pricesRequest.toString()));
-        //Se procede a comprobar que los parámetros estén correctos y a buscar el precio y generar la respuesta
+        logger.info("Petición recibida a  {}.",formattedDateTime1);
+        //Se procede a comprobar que los parámetros estén correctos y a buscar el precio y generar la respuesta.
         validateRequestData.checkPricesRequest(pricesRequest);
+        logger.info("Request: {}",pricesRequest);
         PricesResponse response= priceFinderImpl.findPricesInditex(pricesRequest);
-        logger.info(String.format("Petición respondida : %s.", response.toString()));
+        logger.info("Petición respondida : {}.", response);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     //Endpoint de tipo get con variables recogidas de la url y por parámetro en vez de con un body: solución alternativa
-    @GetMapping(value="/prices/inditex/brand/{brandId}/product/{productId}")
+    @GetMapping(value="/api/v2/prices/inditex/brand/{brandId}/product/{productId}")
     ResponseEntity<PricesResponse> findPriceAlternative(
             @PathVariable Long brandId,
             @PathVariable Long productId,
@@ -50,13 +51,12 @@ public class PricesController {
          */
         LocalDateTime localDateTime1 = LocalDateTime.now();
         String formattedDateTime1 = localDateTime1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        String formattedDateTimeRequest = date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        logger.info(String.format("Petición recibida a  %s. Para producto %d, marca %d, fecha %s",
-                formattedDateTime1, productId, brandId, formattedDateTimeRequest));
+        logger.info("Petición recibida a  {}.",formattedDateTime1);
         //Se procede a comprobar que los parámetros estén correctos y a buscar el precio y generar la respuesta
         validateRequestData.checkPricesRequest(date, productId, brandId);
+        logger.info("Request: brand={}, product={}, date={}",brandId,productId,date);
         PricesResponse response= priceFinderImpl.findPricesInditex(date, productId, brandId);
-        logger.info(String.format("Petición respondida : %s.", response.toString()));
+        logger.info("Petición respondida : {}.", response);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

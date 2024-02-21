@@ -3,13 +3,10 @@ package com.juangp.inditex.infraestructure.web.out;
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
-import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
-import com.juangp.inditex.infraestructure.web.out.controller.CustomExceptionHandler;
+import com.juangp.inditex.infraestructure.web.exception.CustomExceptionHandler;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
-import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

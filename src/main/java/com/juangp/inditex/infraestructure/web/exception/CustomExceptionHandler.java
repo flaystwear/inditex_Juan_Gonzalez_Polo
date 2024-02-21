@@ -1,4 +1,4 @@
-package com.juangp.inditex.infraestructure.web.out.controller;
+package com.juangp.inditex.infraestructure.web.exception;
 
 import com.juangp.inditex.domain.exception.PriceNotFoundException;
 import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
