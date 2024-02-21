@@ -16,7 +16,7 @@ relations and mappers. It contains custom exceptions as well
 - Infrastructure: the logic of the app, and it's enpoints, exception handler,
 and external elements needed, such as the H2 Database.
 
-![aapplication_architecture.png](src/main/resources/documentation/aapplication_architecture.png)
+![aapplication_architecture.drawio.png](src/main/resources/documentation/aapplication_architecture.drawio.png)
 
 ## Database Description
 The application uses an in-memory H2 database, whose structure is as it follows:

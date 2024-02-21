@@ -1,4 +1,4 @@
-package com.juangp.inditex.domain.model.service;
+package com.juangp.inditex.infraestructure.web.service;
 
 import com.juangp.inditex.application.useCase.ValidateRequestData;
 import com.juangp.inditex.domain.exception.RequestNotAcceptableException;

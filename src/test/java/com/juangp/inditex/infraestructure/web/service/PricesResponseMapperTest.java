@@ -1,4 +1,4 @@
-package com.juangp.inditex.domain.model.prices.mapping;
+package com.juangp.inditex.infraestructure.web.service;
 
 import com.juangp.inditex.domain.model.prices.dto.Prices;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
