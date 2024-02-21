@@ -78,7 +78,9 @@ This collection includes the 5 test requested
 - Test 3: Request at 21:00 on the 14th for product 35455 for brand 1 (ZARA).
 - Test 4: Request at 10:00 on the 15th for product 35455 for brand 1 (ZARA).
 - Test 5: Request at 21:00 on the 16th for product 35455 for brand 1 (ZARA).
-### Postman tests results
+### Postman
+When executing the calls with Postman, it will look like this:
+![img.png](src/main/resources/documentation/postman-result.png)
 
 
 ### Input Parameters
