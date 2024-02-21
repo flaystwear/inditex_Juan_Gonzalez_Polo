@@ -119,6 +119,8 @@ GET /api/v2/prices/inditex/brand/1/product/35455?date=2020-06-15T14:00:00
 The testing of the application was done using both junit and mockito for integrated tests
 to get the most coverage possible. Also, the tool Diffblue as an assitant to
 the creation of the tools has proven to be an excellent allie for developing use cases.
+Ther's also a Integration test: *src\test\java\com\juangp\inditex\application\service\prices\integrationTest\IntegrationTest.java*
+
 Here are the test coverages:
 
 
