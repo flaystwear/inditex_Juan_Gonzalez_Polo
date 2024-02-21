@@ -78,6 +78,8 @@ This collection includes the 5 test requested
 - Test 3: Request at 21:00 on the 14th for product 35455 for brand 1 (ZARA).
 - Test 4: Request at 10:00 on the 15th for product 35455 for brand 1 (ZARA).
 - Test 5: Request at 21:00 on the 16th for product 35455 for brand 1 (ZARA).
+### Postman tests results
+
 
 ### Input Parameters
 #### POST REQUEST BODY:
@@ -160,29 +162,35 @@ This tool for Intellij (and Eclipse or VSC)is a valuable asset to keep in check
 the code, as it provides static analysis of the code, whilst is uses the same rules and configurations as SonarQube to grant 
 coherence between its real time analysis and the one in a SonarQube server.
 
+
 # Execution
 
 #### To run the application, use the following command inside the root directory of the project:
-
+##### NOTE
+You need to have Maven and a compatible version of Java installed and configured for this to work
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
-
+It will appear like this:
+![img.png](src/main/resources/documentation/execution_mvn.png)
 The application will be available at http://localhost:8080
 The port is configurated on the application.yml, changeable from there:
-server.port = 8080
+server.port = 8080.
+The test in the postman collection are already pointing to that direction:
+
+[Dowload file: POSTMAN COLLECTION FOR TESTING](src/main/resources/documentation/juanGP_inditex.postman_collection.json)
 
 #### Compile and test
 
 ```bash
-./mvnw clean test
+mvn clean test
 ```
 
 #### Building and Packaging
-To build and package the application, use:
-
+This will build the project and create a JAR in the project *target* directory
+![img.png](src/main/resources/documentation/JARFile.png)
 ```bash
-./mvnw clean package
+mvn clean install package
 ```
-This will generate a JAR file in the target directory.
+
 
