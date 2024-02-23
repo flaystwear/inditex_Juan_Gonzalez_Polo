@@ -1,6 +1,6 @@
 package com.juangp.inditex.infraestructure.web.in.contrroller;
 
-import com.juangp.inditex.application.useCase.ValidateRequestData;
+import com.juangp.inditex.application.useCase.in.ValidateRequestData;
 import com.juangp.inditex.domain.model.prices.dto.FullPrice;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
-import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
+import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -39,6 +39,7 @@ class PricesControllerTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
     }
+
     /**
      * Method under test: {@link PricesController#findPrice(PricesRequest)}
      */
@@ -46,8 +47,8 @@ class PricesControllerTest {
     void testFindPrice_WithValidRequest_ShouldReturnOKResponse() {
         // Arrange
         LocalDateTime date = LocalDateTime.now();
-        PricesRequest request = new PricesRequest(1L,1L,date);
-        PricesResponse response = new PricesResponse(1L,1L,1L,date, date, new FullPrice("EUR", BigDecimal.valueOf(1)));
+        PricesRequest request = new PricesRequest(1L, 1L, date);
+        PricesResponse response = new PricesResponse(1L, 1L, 1L, date, date, new FullPrice("EUR", BigDecimal.valueOf(1)));
         when(priceFinderImpl.findPricesInditex(any())).thenReturn(response);
 
         // Act
@@ -57,6 +58,7 @@ class PricesControllerTest {
         assertEquals(HttpStatus.OK, result.getStatusCode());
         assertEquals(response, result.getBody());
     }
+
     /**
      * Method under test: {@link PricesController#findPriceAlternative(Long, Long, LocalDateTime)}
      */
@@ -66,7 +68,7 @@ class PricesControllerTest {
         Long brandId = 1L;
         Long productId = 1L;
         LocalDateTime date = LocalDateTime.now();
-        PricesResponse response = new PricesResponse(1L,1L,1L,date, date, new
+        PricesResponse response = new PricesResponse(1L, 1L, 1L, date, date, new
                 FullPrice("EUR", BigDecimal.valueOf(1)));
         when(priceFinderImpl.findPricesInditex(any(), any(), any())).thenReturn(response);
         // Act
