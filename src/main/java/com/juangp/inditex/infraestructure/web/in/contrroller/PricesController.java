@@ -1,10 +1,9 @@
 package com.juangp.inditex.infraestructure.web.in.contrroller;
 
-import com.juangp.inditex.application.useCase.PriceFinder;
-import com.juangp.inditex.infraestructure.web.service.ValidateRequestDataImpl;
+import com.juangp.inditex.application.useCase.in.PriceFinder;
+import com.juangp.inditex.application.service.ValidateRequestDataImpl;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
-import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
