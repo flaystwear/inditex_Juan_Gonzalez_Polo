@@ -8,7 +8,7 @@ import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import com.juangp.inditex.domain.model.service.ValidateRequestDataImpl;
+import com.juangp.inditex.infraestructure.web.service.ValidateRequestDataImpl;
 import org.junit.jupiter.api.Test;
 
 class ValidateRequestDataImplTest {

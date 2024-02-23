@@ -1,4 +1,4 @@
-package com.juangp.inditex.domain.model.service;
+package com.juangp.inditex.infraestructure.web.service;
 
 import com.juangp.inditex.application.useCase.ValidateRequestData;
 import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
@@ -6,11 +6,13 @@ import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Component
+@Qualifier("validationPrices")
 public class ValidateRequestDataImpl implements ValidateRequestData {
     private static final Logger logger = LoggerFactory.getLogger(PriceFinderImpl.class);
     @Override
