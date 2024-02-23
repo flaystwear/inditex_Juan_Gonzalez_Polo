@@ -1,5 +1,6 @@
 package com.juangp.inditex.infraestructure.web.in.contrroller;
 
+import com.juangp.inditex.application.useCase.PriceFinder;
 import com.juangp.inditex.infraestructure.web.service.ValidateRequestDataImpl;
 import com.juangp.inditex.domain.model.prices.in.PricesRequest;
 import com.juangp.inditex.domain.model.prices.out.PricesResponse;
@@ -7,6 +8,7 @@ import com.juangp.inditex.infraestructure.web.service.PriceFinderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +21,10 @@ import java.time.format.DateTimeFormatter;
 public class PricesController {
     private static final Logger logger = LoggerFactory.getLogger(PricesController.class);
     @Autowired
-    PriceFinderImpl priceFinderImpl;
+    @Qualifier("pricesFinder")
+    PriceFinder priceFinderImpl;
+
+    @Qualifier("validationPrices")
     ValidateRequestDataImpl validateRequestData= new ValidateRequestDataImpl();
 
     @PostMapping("/api/v2/prices")
