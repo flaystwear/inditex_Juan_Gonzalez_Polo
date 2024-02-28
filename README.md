@@ -127,6 +127,13 @@ Here are the test coverages:
 ### Intellij Test Coverage Report
 ![test_coverage.PNG](src/main/resources/documentation/test_coverage.PNG)
 
+### Jacoco Report
+![jacoco_report.png](src/main/resources/documentation/jacoco_report.png)
+
+### Sonar Report
+
+
+
 ### Spring Boot 
 At this point, ther's no doubt that Springboot is a popular framework for
 Java, specially for building REST applications and microservices.
