@@ -1,6 +1,8 @@
 package com.juangp.inditex.infraestructure.persistence.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +13,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="PRICES")
+@Table(name = "PRICES")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
