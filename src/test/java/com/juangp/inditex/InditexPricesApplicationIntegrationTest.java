@@ -6,13 +6,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(classes = InditexPricesAplication.class)
-public class InditexPricesApplicationIntegrationTest {
+class InditexPricesApplicationIntegrationTest {
 
     @Autowired
     private InditexPricesAplication inditexPricesApplication;
 
     @Test
-    public void contextLoads() {
+    void contextLoads() {
         assertNotNull(inditexPricesApplication);
     }
 }

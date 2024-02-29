@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
-import com.juangp.inditex.application.useCases.PriceFinderImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

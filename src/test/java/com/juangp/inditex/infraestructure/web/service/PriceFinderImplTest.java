@@ -9,7 +9,7 @@ import com.juangp.inditex.domain.services.mapper.PricesResponseMapper;
 import com.juangp.inditex.domain.model.out.PricesResponse;
 import com.juangp.inditex.infraestructure.persistence.mapping.PriceEntityMapper;
 import com.juangp.inditex.infraestructure.persistence.repository.PricesRepository;
-import com.juangp.inditex.application.useCases.PriceFinderImpl;
+import com.juangp.inditex.application.usecase.PriceFinderImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

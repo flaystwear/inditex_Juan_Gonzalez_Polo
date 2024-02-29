@@ -1,4 +1,4 @@
-package com.juangp.inditex.application.useCases;
+package com.juangp.inditex.application.usecase;
 
 import com.juangp.inditex.application.ports.in.PriceFinder;
 import com.juangp.inditex.application.ports.out.FindPricesPort;
