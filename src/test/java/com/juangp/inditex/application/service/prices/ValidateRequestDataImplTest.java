@@ -3,12 +3,12 @@ package com.juangp.inditex.application.service.prices;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.juangp.inditex.domain.exception.RequestNotAcceptableException;
-import com.juangp.inditex.domain.model.prices.in.PricesRequest;
+import com.juangp.inditex.domain.model.in.PricesRequest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import com.juangp.inditex.application.service.ValidateRequestDataImpl;
+import com.juangp.inditex.application.services.ValidateRequestDataImpl;
 import org.junit.jupiter.api.Test;
 
 class ValidateRequestDataImplTest {

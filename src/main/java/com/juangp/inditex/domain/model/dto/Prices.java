@@ -1,7 +1,8 @@
-package com.juangp.inditex.domain.model.prices.dto;
+package com.juangp.inditex.domain.model.dto;
 
-import lombok.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

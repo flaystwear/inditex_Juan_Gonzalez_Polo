@@ -1,17 +1,15 @@
 package com.juangp.inditex.infraestructure.web.service;
 
-import com.juangp.inditex.application.useCase.out.H2Database;
-import com.juangp.inditex.domain.exception.PriceNotFoundException;
+import com.juangp.inditex.application.ports.out.FindPricesPort;
 import com.juangp.inditex.domain.exception.TraductionDtoException;
-import com.juangp.inditex.domain.model.prices.dto.FullPrice;
-import com.juangp.inditex.domain.model.prices.dto.Prices;
-import com.juangp.inditex.domain.model.prices.in.PricesRequest;
-import com.juangp.inditex.domain.model.service.mapping.PricesResponseMapper;
-import com.juangp.inditex.domain.model.prices.out.PricesResponse;
-import com.juangp.inditex.infraestructure.persistence.entity.PricesEntity;
+import com.juangp.inditex.domain.model.dto.FullPrice;
+import com.juangp.inditex.domain.model.dto.Prices;
+import com.juangp.inditex.domain.model.in.PricesRequest;
+import com.juangp.inditex.domain.services.mapper.PricesResponseMapper;
+import com.juangp.inditex.domain.model.out.PricesResponse;
 import com.juangp.inditex.infraestructure.persistence.mapping.PriceEntityMapper;
 import com.juangp.inditex.infraestructure.persistence.repository.PricesRepository;
-import com.juangp.inditex.infraestructure.web.in.service.PriceFinderImpl;
+import com.juangp.inditex.application.useCases.PriceFinderImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -31,7 +29,7 @@ class PriceFinderImplTest {
     private PricesResponseMapper pricesResponseMapper;
 
     @Mock
-    private H2Database h2Database;
+    private FindPricesPort findPricesPort;
 
     @Mock
     private PricesRepository pricesRepository;
@@ -55,7 +53,7 @@ class PriceFinderImplTest {
         LocalDateTime date = LocalDateTime.now();
         PricesRequest request = new PricesRequest(1L,1L,date);
         Prices prices = new Prices(1L,1L,1L,date,date,1L, BigDecimal.valueOf(100.0), "EUR");
-        when(h2Database.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
+        when(findPricesPort.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
                 .thenReturn(prices);
         PricesResponse expectedResponse = new PricesResponse(1L,1L,1L,date, date, new FullPrice("EUR", BigDecimal.valueOf(1)));
         when(pricesResponseMapper.mapPricesToPricesResponse(prices)).thenReturn(expectedResponse);
@@ -76,7 +74,7 @@ class PriceFinderImplTest {
         // Arrange
         LocalDateTime date = LocalDateTime.now();
         PricesRequest request = new PricesRequest(1L,1L,date);
-        when(h2Database.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
+        when(findPricesPort.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
                 .thenReturn(null);
         // Act & Assert
         try{
@@ -115,7 +113,7 @@ class PriceFinderImplTest {
         // Arrange
         LocalDateTime date = LocalDateTime.now();
         Prices prices = new Prices(1L,1L,1L,date,date,1L, BigDecimal.valueOf(100.0), "EUR");
-        when(h2Database.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
+        when(findPricesPort.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
                 .thenReturn(prices);
         PricesResponse expectedResponse = new PricesResponse(1L,1L,1L,date, date, new FullPrice("EUR", BigDecimal.valueOf(1)));
         when(pricesResponseMapper.mapPricesToPricesResponse(prices)).thenReturn(expectedResponse);
@@ -134,7 +132,7 @@ class PriceFinderImplTest {
     void testFindPricesInditexAlternative_WithValidRequest_ShouldReturnTranslatingError() {
         // Arrange
         LocalDateTime date = LocalDateTime.now();
-        when(h2Database.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
+        when(findPricesPort.findByBrandIdAndProductIdAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
                 .thenReturn(null);
         try{
             priceFinder.findPricesInditex(date,1L,1L);

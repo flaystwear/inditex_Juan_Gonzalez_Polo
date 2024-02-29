@@ -1,4 +1,4 @@
-package com.juangp.inditex.domain.model.prices.dto;
+package com.juangp.inditex.domain.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

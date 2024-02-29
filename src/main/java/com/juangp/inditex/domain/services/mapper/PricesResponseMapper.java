@@ -1,14 +1,14 @@
-package com.juangp.inditex.domain.model.service.mapping;
+package com.juangp.inditex.domain.services.mapper;
 
-import com.juangp.inditex.domain.model.prices.dto.FullPrice;
-import com.juangp.inditex.domain.model.prices.dto.Prices;
-import com.juangp.inditex.domain.model.prices.out.PricesResponse;
+import com.juangp.inditex.domain.model.dto.FullPrice;
+import com.juangp.inditex.domain.model.dto.Prices;
+import com.juangp.inditex.domain.model.out.PricesResponse;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PricesResponseMapper {
     public PricesResponse mapPricesToPricesResponse(Prices entity) {
-        FullPrice fullPrice=new FullPrice(entity.getCurrency(), entity.getPrice());
+        FullPrice fullPrice = new FullPrice(entity.getCurrency(), entity.getPrice());
         return new PricesResponse(
                 entity.getProductId(),
                 entity.getBrandId(),
