@@ -1,8 +1,8 @@
 package com.juangp.inditex.infraestructure.web.service;
 
-import com.juangp.inditex.domain.model.prices.dto.Prices;
-import com.juangp.inditex.domain.model.prices.out.PricesResponse;
-import com.juangp.inditex.domain.model.service.mapping.PricesResponseMapper;
+import com.juangp.inditex.domain.model.dto.Prices;
+import com.juangp.inditex.domain.model.out.PricesResponse;
+import com.juangp.inditex.domain.services.mapper.PricesResponseMapper;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

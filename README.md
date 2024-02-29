@@ -7,7 +7,7 @@ that provides a REST service oriented to the finding of different prices
 based on the brand, product, and time period consulted. 
 It implements a Hexagonal Architecture, to focus on clear separation of 
 concerns and independence of business logic from technical implementation 
-details, trying to use SOLID-like* approach.
+details, trying to use SOLID-like* approach. 
 
 The diagram of the application is shown below. The 3 layers are 
 - Application: It defines what the app is going to do
@@ -126,6 +126,13 @@ Here are the test coverages:
 
 ### Intellij Test Coverage Report
 ![test_coverage.PNG](src/main/resources/documentation/test_coverage.PNG)
+
+### Jacoco Report
+![jacoco_report.png](src/main/resources/documentation/jacoco_report.png)
+
+### Sonar Report
+
+![sonarQube.png](src/main/resources/documentation/sonarQube.png)
 
 ### Spring Boot 
 At this point, ther's no doubt that Springboot is a popular framework for

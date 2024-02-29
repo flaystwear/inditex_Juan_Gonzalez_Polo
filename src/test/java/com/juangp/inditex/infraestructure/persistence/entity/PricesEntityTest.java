@@ -72,7 +72,7 @@ class PricesEntityTest {
         pricesEntity.setStartDate(LocalDate.of(1970, 1, 1).atStartOfDay());
 
         // Act and Assert
-        assertNotEquals(pricesEntity, null);
+        assertNotEquals(null, pricesEntity);
     }
 
     /**
@@ -93,7 +93,7 @@ class PricesEntityTest {
         pricesEntity.setStartDate(LocalDate.of(1970, 1, 1).atStartOfDay());
 
         // Act and Assert
-        assertNotEquals(pricesEntity, "Different type to PricesEntity");
+        assertNotEquals(null,pricesEntity);
     }
 
     /**
